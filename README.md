@@ -1,5 +1,5 @@
-### Ex. No. 5
-### Date: 12.5.23
+### Ex. No. 4
+### Date: 08.01.24
 # Implementation of Flipflops using Verilog HDL
 ## Aim:
 To design and implement the following flipflops using Verilog HDL and verify its characteristic table.
@@ -43,17 +43,91 @@ In T flip flop, "T" defines the term "Toggle". In SR Flip Flop, we provide only 
 
 
 ## Program:
-
+### 1.SR Flipflop:
+```verilog
+  module exp4a(s,r,clk,q,qbar);
+  input s,r,clk;
+  output reg q;
+  output qbar;
+  always@(posedge clk)
+  begin
+  q=s|((~r)&q);
+  end
+  assign qbar=~q;
+  endmodule
+```
+### 2.D-Flipflop:
+```verilog
+   module exp4b(d,clk,q,qbar);
+   input d,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=d;
+   end
+   assign qbar=~q;
+   endmodule
+```
+### 3.JK-Flipflop:
+```verilog
+   module exp4c(j,k,clk,q,qbar);
+   input j,k,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&j)|(q&(~k));
+   end
+   assign qbar=~q;
+   endmodule
+```
+### 4.T-Flipflop:
+```verilog
+   module exp4d(t,clk,q,qbar);
+   input t,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&t)|(q&(~t));
+   end
+   assign qbar=~q;
+   endmodule
+```
 
 ## RTL Schematic:
+### 1.SR Flipflop:
+![image](https://github.com/RahulMR2005/Flipflops/assets/145525365/dff0bc8f-060a-484b-8bf0-1713d60785dd)
+
+### 2.D Flipflop:
+![image](https://github.com/RahulMR2005/Flipflops/assets/145525365/d61a6b18-69c0-40be-82c2-6789c7609fb4)
+
+### 3.JK Flipflop:
+![image](https://github.com/RahulMR2005/Flipflops/assets/145525365/9d9b9132-313d-4e20-80d4-d30c5ed02d34)
+
+### 4.T Flipflop:
+![image](https://github.com/RahulMR2005/Flipflops/assets/145525365/97cda27b-705b-4410-84eb-6a71d436cbad)
 
 
 
 
 ## Timing Diagram:
+### 1.SR Flipflop:
+![image](https://github.com/RahulMR2005/Flipflops/assets/145525365/10b529c1-49b0-445f-939f-f770ac26fd53)
 
+
+### 2.D Flipflop:
+![image](https://github.com/RahulMR2005/Flipflops/assets/145525365/7069a304-ffad-44ec-b124-f9a0f78c46d5)
+
+###  3.JK Flipflop:
+![image](https://github.com/RahulMR2005/Flipflops/assets/145525365/57bcc110-ce26-4bcf-990b-be5f3421c6ce)
+
+
+### 4.T Flipflop:
+![image](https://github.com/RahulMR2005/Flipflops/assets/145525365/2faf5584-4f0b-4f3c-b68e-56ba20b8ac8a)
 
 
 ## Result:
-Thus the SR, D, JK and T flipflops are implemented and the characteristic tables are verified.
+Thus, the SR, D, JK and T flipflops are implemented and the characteristic tables are verified.
 
