@@ -1,5 +1,3 @@
-### Ex. No. 4
-### Date: 08.01.24
 # Implementation of Flipflops using Verilog HDL
 ## Aim:
 To design and implement the following flipflops using Verilog HDL and verify its characteristic table.
